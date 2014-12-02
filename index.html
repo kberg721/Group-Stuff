@@ -12,15 +12,15 @@
     </head>
     <body>
         <main class="container-fluid">
-            <header class="piece">
+            <header id="top" class="piece">             
                 <div id="social">
                     <a href="https://twitter.com/bigtimebrewery" class="icon-button twitter"><i class="icon-twitter"></i>
                         <span></span></a>
                     <a href="https://www.facebook.com/pages/Big-Time-Brewery-Alehouse/138251856236808" class="icon-button facebook">
-                        <i class="icon-facebook"></i><span></span></a>
-                 </div>
-                    <div id="nav-bar">
-                        <nav role="navigation">
+                    <i class="icon-facebook"></i><span></span></a>
+                </div>
+                <div id="nav-bar">
+                    <nav role="navigation">
                             <ul>
                                 <li><a href="#menu"></a>Menu</li>
                                 <li><p>|</p></li>
@@ -33,13 +33,13 @@
                                 <li><a href="#contactus"></a>Contact Us</li>
                                 <li><p>|</p></li>
                                 <li><a href="#merchandise"></a>Merchandise</li>
-                           </ul>
-                        </nav>
-                    </div>
-                    <div id="contact-info">
-                        <p>Hours: 11:30am till 12:30am S-Th, 1:30am F-S</p>
-                        <p>Minors Allowed till 8:00pm</p>
-                    </div>
+                            </ul>
+                    </nav>
+                </div>
+                <div id="contact-info">
+                    <p>Hours: 11:30am till 12:30am S-Th, 1:30am F-S</p><br>
+                    <p>Minors Allowed till 8:00pm</p>
+                </div>             
             </header>
             <!--each item will link to a page with more information-->
             <div id="carousel" class="owl-carousel">
@@ -56,9 +56,11 @@
                 </div>
                 <div id= "bt-news" class="piece events">
                     <h3>Big Time News!</h3>
-                        <p>
-                            Sartorial narwhal leggings retro VHS, viral Banksy letterpress. Tonx meggings meditation, farm-to-table fingerstache freegan fixie kale chips biodiesel 3 wolf moon cardigan vegan readymade photo booth street art. Blog umami direct trade Echo Park keffiyeh. Scenester shabby chic master cleanse plaid Banksy, tofu VHS salvia pug +1 sustainable wayfarers tote bag. 
-                        </p>
+                        <form>
+                            Join Our Newsletter!
+                            <input type="text" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" name="email">
+                            <button type="submit" class="btn btn-default">Submit!</button>
+                        </form>
                 </div>
             </div>
         </main>

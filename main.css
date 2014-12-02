@@ -6,6 +6,10 @@ body {
 	font-family: 'Bevan', 'Helvetica Neue', 'Helvetica', sans-serif;
 }
 
+#top {
+	margin-bottom: 20px;
+}
+
 #social {
 	text-align: right;
 }
@@ -19,8 +23,8 @@ body {
 }
 
 #logo {
-	height: 150px;
-	width: 150px;
+	height: 200px;
+	width: 200px;
 }
 
 #logo, #title, #contact-info > p {
