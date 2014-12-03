@@ -1,16 +1,4 @@
-$(document).ready(function() {
- 
-  $("#carousel").owlCarousel({
-  	  navigation : false, // Show next and prev buttons
-      slideSpeed : 500,
-      paginationSpeed : 400,
-      singleItem:true,
-      autoPlay:true
-  });
- 
-});
-
-var url = 'https://api.parse.com/1/classes/emails';
+var url = 'https://api.parse.com/1/classes/emails/';
 
 angular.module('EmailApp', [])
     .config(function($httpProvider) {
@@ -24,7 +12,7 @@ angular.module('EmailApp', [])
             $scope.loading = true;
             $http.get(url)
                 .success(function(responseData) {
-                    $scope.comments = responseData.results;
+                    $scope.emails = responseData.results;
                 })
                 .error(function(err) {
                     console.log(err);
@@ -40,16 +28,15 @@ angular.module('EmailApp', [])
         $scope.newEmail = {done: false};
 
         //adds new email from form
-    	$scope.addComment = function(comment) {
+    	$scope.addEmail = function(email) {
             $scope.adding = true; //begin loading animation
-            $scope.none = false; //now a comment exists
-            comment.score = 0; //default comment score
-            $http.post(url + 'comments', comment)
+            $scope.none = false; //now a email exists
+            $http.post(url, email)
                 .success(function(responseData) {
-                    comment.objectId = responseData.objectId;
-                    $scope.comments.push(comment);
-                    //clear form and create new comment object
-                    $scope.newComment = {done: false};
+                    email.objectId = responseData.objectId;
+                    $scope.emails.push(email);
+                    //clear form and create new email object
+                    $scope.newEmail = {done: false};
                 })
                 .error(function(err) {
                 	console.log(err);
@@ -59,6 +46,16 @@ angular.module('EmailApp', [])
                 });
         };
 
-
+        //deletes an email from the newsletter list
+        $scope.deleteEmail = function(email) {
+            $http.delete(url + email.objectId)
+            .success(function(responseData) {
+                //successful deletion
+                $scope.refreshEmails();
+            })
+            .error(function(err) {
+                console.log(err);
+            });
+        }
 
     });
