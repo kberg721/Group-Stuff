@@ -1,6 +1,13 @@
+/*
+	Group 6
+	INFO 343 with Morris
+    Kyle Bergman, Tammy Nguyen, Rhea Arora, Sean Cheong
+*/
+
 $(document).ready(function() {
  
-  $("#carousel").owlCarousel({
+  //obtain carousel
+  $(".carousel").owlCarousel({
   	  navigation : false, // Show next and prev buttons
       slideSpeed : 500,
       paginationSpeed : 400,
@@ -8,6 +15,7 @@ $(document).ready(function() {
       autoPlay:true
   });
 
+  //fade out social buttons as you scroll
   var mn = $(".nav-bar");
   $(window).scroll(function() {
   	if($(this).scrollTop() > 275) {

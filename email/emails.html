@@ -1,3 +1,9 @@
+<!--
+    Group 6
+    INFO 343 with Morris
+    Kyle Bergman, Tammy Nguyen, Rhea Arora, Sean Cheong
+-->
+
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
@@ -9,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="emails.css"/>
 	</head>
 	<body ng-app="EmailApp" ng-controller="EmailController">
+        <!--Top part with logo and title-->
 		<header>
 			<img id="logo" src="../img/big-time.jpg">
 			<div id="titles">
@@ -17,6 +24,7 @@
 			</div>
 			<hr>
 		</header>
+        <!--Where the emails will go-->
 		<main>
 			<p>
                 <button class="btn btn-primary" ng-click="refreshEmails()">Refresh</button>
@@ -32,6 +40,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <!--retrieve emails from parse-->
                     <tr ng-repeat="email in emails">
                         <td>{{email.name}}</td>
                         <td>{{email.zip}}</td>

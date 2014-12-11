@@ -1,3 +1,9 @@
+/*
+    Group 6
+    INFO 343 with Morris
+    Kyle Bergman, Tammy Nguyen, Rhea Arora, Sean Cheong
+*/
+
 var url = 'https://api.parse.com/1/classes/emails/';
 
 angular.module('EmailApp', [])
@@ -8,6 +14,7 @@ angular.module('EmailApp', [])
 
     .controller('EmailController', function($scope, $http) {
 
+        //get emails again from Parse
     	$scope.refreshEmails = function() {
             $scope.loading = true;
             $http.get(url)
@@ -33,6 +40,10 @@ angular.module('EmailApp', [])
             $scope.none = false; //now a email exists
             $http.post(url, email)
                 .success(function(responseData) {
+                    $("#submit").click(function() {
+                        document.getElementById("form").style.display = "none";
+                        document.getElementById("signedUp").style.display = "initial";
+                    })
                     email.objectId = responseData.objectId;
                     $scope.emails.push(email);
                     //clear form and create new email object
