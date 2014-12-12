@@ -5,12 +5,11 @@
 */
 
 @import url(http://fonts.googleapis.com/css?family=Bevan);
-@import url(http://fonts.googleapis.com/css?family=Slabo+27px);
-
 
 body {
 	background-image: url("../img/wood-grain-mahogany.jpg");
-	font-family: 'Slabo', 'Helvetica Neue', 'Helvetica', sans-serif;
+	font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+	font-size: 14px;
 	font-weight: bold;
 	padding-top: 275px;
 }
@@ -41,7 +40,7 @@ h3, .nav-bar {
 
 header,
 .main-nav-scrolled {
-	position: fixed;
+	position: fixed !important;
 	width: 100%;
 	top: 0px;
 }
